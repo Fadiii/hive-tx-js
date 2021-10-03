@@ -26,6 +26,7 @@ const call = async (method, params = [], timeout = 10) => {
           resolve(res.data)
         }
       })
+      .catch(err => console.log(err))
     setTimeout(() => {
       if (!resolved) {
         reject(new Error('Network timeout.'))
